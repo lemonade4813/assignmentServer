@@ -92,6 +92,10 @@ public class OrderController {
         try {
             OrderSummaryEntity orderSummary = orderService.retrieveSummary(tableNum);
 
+            if(orderSummary == null){
+                throw new RuntimeException("예약 가능한 테이블입니다.");
+            }
+
             ResponseDTO<OrderSummaryDTO> response = ResponseDTO.<OrderSummaryDTO>builder().data(new OrderSummaryDTO(orderSummary)).build();
 
             return ResponseEntity.ok().body(response);
