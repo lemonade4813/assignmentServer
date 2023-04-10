@@ -28,15 +28,11 @@ public class OrderController {
     public ResponseEntity<?> retrieveOrderDetail(@RequestParam String orderId){
 
 
-        System.out.println(orderId);
-
         List<OrderEntity> orderEntities = orderService.retrieve(orderId);
 
         List<OrderDTO> orderDtos = orderEntities.stream().map(OrderDTO::new).collect(Collectors.toList());
 
         ResponseListDTO<OrderDTO> response = ResponseListDTO.<OrderDTO>builder().data(orderDtos).build();
-
-        System.out.println("response" + response);
 
         return ResponseEntity.ok().body(response);
 
@@ -95,8 +91,6 @@ public class OrderController {
 
         try {
             OrderSummaryEntity orderSummary = orderService.retrieveSummary(tableNum);
-
-            System.out.println("orderSummary" + orderSummary);
 
             ResponseDTO<OrderSummaryDTO> response = ResponseDTO.<OrderSummaryDTO>builder().data(new OrderSummaryDTO(orderSummary)).build();
 
