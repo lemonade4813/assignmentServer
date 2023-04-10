@@ -56,8 +56,6 @@ public class OrderController {
 
         String orderId = "ORDER_" + nowTime;
 
-        System.out.println("orderId : " +  orderId);
-
         int price = 0;
         int quantity = 0;
 
@@ -94,9 +92,6 @@ public class OrderController {
 
     @GetMapping("/summary")
     public ResponseEntity<?> retrieveOrderSummary(@RequestParam int tableNum){
-
-    System.out.println(tableNum);
-
 
         try {
             OrderSummaryEntity orderSummary = orderService.retrieveSummary(tableNum);
