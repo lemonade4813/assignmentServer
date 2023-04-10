@@ -7,7 +7,7 @@
 
 ### 2. 실행 방법 : 
 
-- java/com/example/assignmentServer/AssignmentServerApplication.java 실행 
+- java/com/example/assignmentServer/assignmentServerApplication.java 실행 
   (port : 8080)
 
 ### 3. DB접속 정보
