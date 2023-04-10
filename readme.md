@@ -13,6 +13,7 @@
 ### 3. DB접속 정보
 
  - DB : Mysql(Amazon RDS)
+ - DB name : order
  - url: jdbc:mysql://database-1.cgsqdm8ubkh3.ap-northeast-2.rds.amazonaws.com:3306/order
  - username: admin
  - password: password
