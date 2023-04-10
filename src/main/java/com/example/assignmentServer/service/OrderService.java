@@ -33,12 +33,18 @@ public class OrderService {
 
     }
 
+    public void updateOrderSummary(String orderId){
+
+        orderSummaryRepository.updateOrderSummary(orderId);
+
+    }
+
     public OrderSummaryEntity retrieveSummary(int tableNum){
         return orderSummaryRepository.findByTableNum(tableNum);
     }
 
-    public List<OrderEntity> retrieve(int tableNum){
-        return orderRepository.findByTableNum(tableNum);
+    public List<OrderEntity> retrieve(String orderId){
+        return orderRepository.findByOrderId(orderId);
 
     }
 

@@ -25,12 +25,12 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/detail")
-    public ResponseEntity<?> retrieveOrderDetail(@RequestParam int tableNum){
+    public ResponseEntity<?> retrieveOrderDetail(@RequestParam String orderId){
 
 
-        System.out.println(tableNum);
+        System.out.println(orderId);
 
-        List<OrderEntity> orderEntities = orderService.retrieve(tableNum);
+        List<OrderEntity> orderEntities = orderService.retrieve(orderId);
 
         List<OrderDTO> orderDtos = orderEntities.stream().map(OrderDTO::new).collect(Collectors.toList());
 
@@ -112,5 +112,10 @@ public class OrderController {
             return ResponseEntity.badRequest().body(responseDTO);
 
         }
+    }
+
+    @GetMapping("/update")
+            public void updateOrderSummary(@RequestParam String orderId){
+            orderService.updateOrderSummary(orderId);
     }
 }
