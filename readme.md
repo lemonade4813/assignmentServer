@@ -5,3 +5,17 @@
 * JAVA version : 17.0.6
 * 개발 환경 : intelliJ IDEA
 
+### 2. 실행 방법 : 
+
+java/com/example/assignmentServer/AssignmentServerApplication.java 실행 
+
+(localhost:8080 으로 실행)
+
+### 3. DB접속 정보
+
+* DB : Mysql(Amazon RDS)
+ - url: jdbc:mysql://database-1.cgsqdm8ubkh3.ap-northeast-2.rds.amazonaws.com:3306/order
+ - username: admin
+ - password: password
+
+
